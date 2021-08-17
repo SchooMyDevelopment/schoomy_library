@@ -1,0 +1,19 @@
+#######################################
+# SchooMy Utilities Library
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+SchooMyUtilities	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+serialPlotterPrint	KEYWORD2
+soundSensorBegin	KEYWORD2
+soundSensorPlotterAnalogRead	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
