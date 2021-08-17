@@ -1,4 +1,4 @@
-# schoomy_library
+# schoomy_utilities
 A utility library for schoomy.
 
 # Usage
