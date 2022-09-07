@@ -20,6 +20,3 @@
       int _getSoundSensorPlotterAdjustValue(int echoPin);
   };
 #endif
-
-
-
