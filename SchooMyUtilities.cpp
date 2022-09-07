@@ -52,3 +52,15 @@ int SchooMyUtilities::soundSensorPlotterAnalogRead(int echoPin) {
   total += secList[0];
   return (int) total / sec_num;
 }
+
+char* SchooMyUtilities::encrypt(char* password) {
+    size_t outputLength;
+    char* encoded = (char*)base64_encode((const unsigned char*)password, strlen(password), &outputLength);
+    return encoded;
+}
+
+char* SchooMyUtilities::decrypt(char* password){
+    size_t outputLength;
+    char* decoded = (char*)base64_decode((const unsigned char *)password, strlen(password), &outputLength);
+    return decoded;
+}
