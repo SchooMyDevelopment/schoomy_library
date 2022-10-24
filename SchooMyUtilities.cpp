@@ -5,9 +5,6 @@
 
 SchooMyUtilities::SchooMyUtilities() {}
 
-/**
- * common utilities
- */
 void SchooMyUtilities::serialPlotterPrint(int value, int upperLimit, int lowerLimit) {
   Serial.print(upperLimit);
   Serial.print(",");
@@ -17,9 +14,6 @@ void SchooMyUtilities::serialPlotterPrint(int value, int upperLimit, int lowerLi
   Serial.println("");
 }
 
-/**
- * soundSensor utilities
- */
 void SchooMyUtilities::soundSensorBegin(int echoPin) {
   pinMode(echoPin, INPUT);
   _plotAdjust = _getSoundSensorPlotterAdjustValue(echoPin);
@@ -59,8 +53,27 @@ char* SchooMyUtilities::encrypt(char* password) {
     return encoded;
 }
 
-char* SchooMyUtilities::decrypt(char* password){
+char* SchooMyUtilities::decrypt(char* password) {
     size_t outputLength;
     char* decoded = (char*)base64_decode((const unsigned char *)password, strlen(password), &outputLength);
     return decoded;
+}
+
+String SchooMyUtilities::getChipId(uint64_t mac) {
+    uint32_t id = 0;
+    for(int i = 0; i < 17; i = i+8) {
+      id |= ((mac >> (40 - i)) & 0xff) << i;
+    }
+    return String(id);
+}
+
+Preferences preferences;
+String SchooMyUtilities::getSchooMyApiKey(String registerKey) {
+    preferences.begin("SCHOOMY", false);
+    if (registerKey != "") {
+      preferences.putString("API-KEY", registerKey);
+    }
+    String apiKey = preferences.getString("API-KEY");
+    preferences.end();
+    return apiKey;
 }
