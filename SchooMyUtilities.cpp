@@ -47,18 +47,6 @@ int SchooMyUtilities::soundSensorPlotterAnalogRead(int echoPin) {
   return (int) total / sec_num;
 }
 
-char* SchooMyUtilities::encrypt(char* password) {
-    size_t outputLength;
-    char* encoded = (char*)base64_encode((const unsigned char*)password, strlen(password), &outputLength);
-    return encoded;
-}
-
-char* SchooMyUtilities::decrypt(char* password) {
-    size_t outputLength;
-    char* decoded = (char*)base64_decode((const unsigned char *)password, strlen(password), &outputLength);
-    return decoded;
-}
-
 String SchooMyUtilities::getChipId(uint64_t mac) {
     uint32_t id = 0;
     for(int i = 0; i < 17; i = i+8) {
