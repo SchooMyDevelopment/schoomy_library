@@ -4,18 +4,13 @@
   #define SchooMyUtilities_h
   #include "Arduino.h"
   #include "Preferences.h"
-  extern "C" {
-    #include "crypto/base64.h"
-  }
-
+  
   class SchooMyUtilities {
     public:
       SchooMyUtilities();
       void serialPlotterPrint(int value, int upperLimit, int lowerLimit);
       void soundSensorBegin(int echoPin);
       int soundSensorPlotterAnalogRead(int echoPin);
-      char* encrypt(char* password);
-      char* decrypt(char* password);
       String getChipId(uint64_t mac);
       String getSchooMyApiKey(String registerKey);
     private:
