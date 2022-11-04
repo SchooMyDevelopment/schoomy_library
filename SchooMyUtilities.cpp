@@ -54,14 +54,3 @@ String SchooMyUtilities::getChipId(uint64_t mac) {
     }
     return String(id);
 }
-
-Preferences preferences;
-String SchooMyUtilities::getSchooMyApiKey(String registerKey) {
-    preferences.begin("SCHOOMY", false);
-    if (registerKey != "") {
-      preferences.putString("API-KEY", registerKey);
-    }
-    String apiKey = preferences.getString("API-KEY");
-    preferences.end();
-    return apiKey;
-}
