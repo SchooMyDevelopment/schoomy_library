@@ -11,6 +11,9 @@
       void soundSensorBegin(int echoPin);
       int soundSensorPlotterAnalogRead(int echoPin);
       String getChipId(uint64_t mac);
+      static const int High = LOW;
+      static const int Low = HIGH;
+
     private:
       int _plotAdjust;
       int _getSoundSensorPlotterAdjustValue(int echoPin);
