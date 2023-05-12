@@ -54,6 +54,20 @@
       static const int F_AS4 = 932;
       static const int F_B4 = 988;
       static const int F_BS4 = 1047;
+      static const int F_C5 = 1047;
+      static const int F_CS5 = 1109;
+      static const int F_D5 = 1175;
+      static const int F_DS5 = 1245;
+      static const int F_E5 = 1319;
+      static const int F_ES5 = 1397;
+      static const int F_F5 = 1397;
+      static const int F_FS5 = 1480;
+      static const int F_G5 = 1568;
+      static const int F_GS5 = 1661;
+      static const int F_A5 = 1760;
+      static const int F_AS5 = 1865;
+      static const int F_B5 = 1976;
+      static const int F_BS5 = 2093;
     private:
       int _plotAdjust;
       int _getSoundSensorPlotterAdjustValue(int echoPin);
