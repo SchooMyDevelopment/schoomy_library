@@ -3,11 +3,12 @@
 #ifndef SchooMyUtilities_h
   #define SchooMyUtilities_h
   #include "Arduino.h"
-  
+
   class SchooMyUtilities {
     public:
       SchooMyUtilities();
       void serialPlotterPrint(int value, int upperLimit, int lowerLimit);
+      void serialPlotterPrintMultiple(int upperLimit, int lowerLimit, int numValues, ...);
       void soundSensorBegin(int echoPin);
       int soundSensorPlotterAnalogRead(int echoPin);
       String getChipId(uint64_t mac);

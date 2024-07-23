@@ -14,6 +14,29 @@ void SchooMyUtilities::serialPlotterPrint(int value, int upperLimit, int lowerLi
   Serial.println("");
 }
 
+void SchooMyUtilities::serialPlotterPrintMultiple(int upperLimit, int lowerLimit, int numValues, ...) {
+  va_list args;
+  va_start(args, numValues);
+  Serial.print("upperLimit:");
+  Serial.print(upperLimit);
+  Serial.print(",");
+  Serial.print("lowerLimit:");
+  Serial.print(lowerLimit);
+  Serial.print(",");
+  for (int i = 0; i < numValues; i++) {
+    double value = va_arg(args, double);
+    Serial.print("value");
+    Serial.print(i + 1);
+    Serial.print(":");
+    Serial.print(value);
+    if (i < numValues - 1) {
+      Serial.print(",");
+    }
+  }
+  Serial.println("");
+  va_end(args);
+}
+
 void SchooMyUtilities::soundSensorBegin(int echoPin) {
   pinMode(echoPin, INPUT);
   _plotAdjust = _getSoundSensorPlotterAdjustValue(echoPin);
